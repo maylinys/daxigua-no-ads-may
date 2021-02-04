@@ -1035,7 +1035,7 @@ window.__require = function e(t, n, o) {
           this.scheduleOnce(function () {
             r.default.Instance.HideScorePanel(), n.levelTxt.string = r.default.Instance.level.toString(), n.scoreLabel.string = s.default.score.toString(), n.highScoreLabel.string = t, n.resultTxt.string = n.GetContentByScore(e), n.overTxt.string = "\u5f53\u524d\u5173\u5361\u5df2\u5b8c\u6210" + Math.floor(r.default.Instance.nowYQ / r.default.Instance.passlevelYQ * 100) + "%", n.canClick = !1, n.levelTxt.string = e, n.bgMask.runAction(cc.fadeTo(.36, 150)), n.scheduleOnce(function () {
               i.default.CenteredUi(10, this.di, this.levelTxt.node, this.guan), this.failedUiBox.y = cc.winSize.height / 2 + this.failedUiBox.height / 2, this.failedUiBox.runAction(cc.sequence(cc.moveTo(.36, this.failedBoxPos).easing(cc.easeBackOut()), cc.callFunc(function () {
-                this.clickMask.on(cc.Node.EventType.TOUCH_START, this.OnClickCloseMask, this), this.moreGameBtn.on(cc.Node.EventType.TOUCH_START, this.OnClickMoreGame, this), this.continueTip.opacity = 0, this.continueTip.runAction(cc.repeatForever(cc.sequence(cc.fadeIn(.5), cc.delayTime(.5), cc.fadeOut(.5)))), this.canClick = !0
+                this.clickMask.on(cc.Node.EventType.TOUCH_START, this.OnClickCloseMask, this), this.moreGameBtn.on(cc.Node.EventType.TOUCH_START, /*this.OnClickMoreGame,*/ this), this.continueTip.opacity = 0, this.continueTip.runAction(cc.repeatForever(cc.sequence(cc.fadeIn(.5), cc.delayTime(.5), cc.fadeOut(.5)))), this.canClick = !0
               }, this)))
             }, 0)
           }, .5)
@@ -1045,10 +1045,11 @@ window.__require = function e(t, n, o) {
           this.failedUiBox.runAction(cc.moveTo(.3, e).easing(cc.easeBackIn()))
         }, t.prototype.OnClickCloseMask = function () {
           this.canClick && 0 == cc.find("Canvas/uiEffectPanel").childrenCount && a.default.Instance.RestartGame()
+        /*左上角广告去除
         }, t.prototype.OnClickMoreGame = function () {
           this.canClick && (this.moreGameBtn.off(cc.Node.EventType.TOUCH_START, this.OnClickMoreGame, this), this.canClick = !1, this.moreGameBtn.runAction(cc.sequence(cc.scaleTo(.1, 1.1), cc.scaleTo(.1, 1))), this.scheduleOnce(function () {
             window.location.href = "http://m.wesane.com/"
-          }, .15))
+          }, .15))*/
         }, t.prototype.GetContentByScore = function (e) {
           var t = Math.ceil(e / 1500 * 94);
           t > 94 && (t = 94);
@@ -2131,8 +2132,9 @@ window.__require = function e(t, n, o) {
             a = 0,
             i = c.substring(c.lastIndexOf("/game/") + 1, c.length).split("/");
           i.length >= 2 && (a = i[1]), this.gameHttpId = a, cc.log("gameId", a);
+          /*
           e.substring(e.lastIndexOf("//") + 4, e.lastIndexOf("com") + 3);
-          this.moreGameUrl = "http://m.wesane.com/"
+          this.moreGameUrl = "http://m.wesane.com/"*/
         },
         gameOverShowText: function (e, t) {
           this.ajaxLoad("http://www.wesane.com/admin.php/Gamescore/saveGamescore", "gameScore=" + e + "&gameId=" + this.gameHttpId + "&gameType=" + t, this.scoreResult)
