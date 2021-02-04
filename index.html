@@ -220,7 +220,26 @@
     </script>
 
 
-
+<script type="text/javascript">
+    function getBrowser(){ //判断浏览器是在android系统上还是在ios系统上
+    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+    //移动端页面
+    var linkNode = document.createElement("link"); 
+    linkNode.setAttribute("rel","stylesheet");
+    linkNode.setAttribute("type","text/css");
+    linkNode.setAttribute("href","../../css/style-mobile.css");
+    document.head.appendChild(linkNode);
+    }else{
+    //pc端页面
+    var linkNode = document.createElement("link"); 
+    linkNode.setAttribute("rel","stylesheet");
+    linkNode.setAttribute("type","text/css");
+    linkNode.setAttribute("href","../../css/style-mobile.css");
+    document.head.appendChild(linkNode);
+    }
+    }
+    getBrowser();
+</script>
 
 
     <script src="src/settings.js" charset="utf-8"></script>
@@ -263,6 +282,7 @@
             document.body.appendChild(cocos2d);
         })();
     </script>
+
 
 
 
