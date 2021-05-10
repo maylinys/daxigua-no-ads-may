@@ -1,8 +1,8 @@
-## 合成大西瓜无广告版
+## 合成大西瓜无广告版by may
 
 **声明，本项目仅帮助大家学习技术及娱乐，切勿将修改后的网站大规模传播及商用，以避免侵权！**
 
-基于https://github.com/liyupi/daxigua进行修改
+基于https://github.com/liyupi/daxigua 进行修改，去广告
 
 详细教程：[魔改和上线你的合成大西瓜，最全教程！](https://mp.weixin.qq.com/s/H9VR1MWn-9bKSC_1l_MkJw)
 
